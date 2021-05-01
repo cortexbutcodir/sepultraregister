@@ -12,7 +12,7 @@ mongoose.connection.on('error', (err) => {
   console.log(`[Mongoose Error]: ${err}`);
 });
 
-
+//bu bot cortex tarafından Kodlanmıştır
 
 Array.prototype.clear = function() {
   let newArray = [];
@@ -57,7 +57,8 @@ for (let command of commands) {
 
 client.on("ready", () => {
   client.channels.cache.get(config.botses).join();
-})
+})//bu bot cortex tarafından Kodlanmıştır
+
 client.on("message", message => {
   if (message.content === '.tag')
   message.channel.send('**☆**')
@@ -65,7 +66,8 @@ client.on("message", message => {
 client.on("message", message => {
     if (message.content === 'tag')
     message.channel.send('**☆**')
-  })
+  })//bu bot cortex tarafından Kodlanmıştır
+
   client.on("message", message => {
     if (message.content === '!tag')
     message.channel.send('**☆**')
@@ -79,7 +81,8 @@ client.on('guildMemberAdd', member => {
   member.setNickname('• İsim | Yaş')
   let cortexkullanıcı = client.users.cache.get(member.id)
   const cortexhesapkurulus = new Date().getTime()- cortexkullanıcı.createdAt.getTime();
-  let cortej;
+  let cortej;//bu bot cortex tarafından Kodlanmıştır
+
   moment.locale("tr");
   if (cortexhesapkurulus < 1296000000) cortej =  member.roles.remove(`837761220345724928`) && member.roles.add(`838065191727792210`) && member.setNickname(`Şüpheli Hesap`);
    })
@@ -90,19 +93,14 @@ client.on('guildMemberAdd', member => {
 
         
 
-///
-   
-  //
-  // hata çıkarsa Lightmind#6110
-
 client.on("userUpdate", async (oldUser, newUser) => {
     if (oldUser.username !== newUser.username) {
     const tag = config.tag
     const sunucu = config.guildid
     const kanal = config.taglog
-    const lightmind = config.taglırol // taglı lightmind id
-    const reborn = config.boygirlroles  // reborn rolünü gir ornek erkek rolü veya kadın rolü gidicek tag salınınca.
-    const sphere = config.unregisterRoles  // sphere Rolü parçası
+    const lightmind = config.taglırol 
+    const reborn = config.boygirlroles  
+    const sphere = config.unregisterRoles 
   
     
   
@@ -118,7 +116,8 @@ client.on("userUpdate", async (oldUser, newUser) => {
     await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.remove(reborn);
     await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.add(sphere);
     }
-  } catch (e) {
+  } catch (e) {//bu bot cortex tarafından Kodlanmıştır
+
   console.log(`Bir hata oluştu! ${e}`)
    }
   }
@@ -147,14 +146,15 @@ client.on("userUpdate", async (oldUser, newUser) => {
          
      \<@&837761220383342672> Rolundekiler Senle En Kısa Zamanda İlgilenicek Seninle Birlikte ${member.guild.memberCount} Kişiyiz :tada:  
       `)
-    })
+    })//bu bot cortex tarafından Kodlanmıştır
+
 
      //
      
      client.on("guildMemberAdd", member => {
-       let sunucuid = config.sunucuid; //Buraya sunucunuzun IDsini yazın
-       let tag = "☆"; //Buraya tagınızı yazın
-       let rol = config.taglırol; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+       let sunucuid = config.sunucuid; 
+       let tag = "☆"; 
+       let rol = config.taglırol; 
      if(member.user.username.includes(tag)){
      member.roles.add(rol)
        const tagalma = new Discord.MessageEmbed()
@@ -166,9 +166,10 @@ client.on("userUpdate", async (oldUser, newUser) => {
      }
      })
      ///
-    
+    //bu bot cortex tarafından Kodlanmıştır
 
-    client.login(config.botToken);
+
+    client.login(process.env.token);
 
 
 
